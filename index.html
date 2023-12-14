@@ -9,7 +9,48 @@
         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
+        <div id="app">
+            <div class="container_ bg_white d-flex">
+                <div class="left">
+                    <div class="header">
+                        <img src="./img/avatar_io.jpg" alt="Sofia" class="avatar">
+                        <span>Sofia</span>
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                    <div class="banner d-flex">
+                        <div><i class="fa-solid fa-bell-slash"></i></div>
+                        <div>
+                            <p>Ricevi notifiche di nuovi messaggi</p>
+                            <a href="">Attiva notifiche desktop</a href="">
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                      </div>                      
+                    <ul class="list-unstyled">
+                        <li v-for="(user,index) in contacts" :key= "index">
+                            <img :src="user.avatar" alt="user.name" class="avatar">
+                            <span>{{user.name}}</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <div class="header">
+                        <img :src="contacts[activeContact].avatar" alt="{{contacts[activeContact].name}}" class="avatar">
+                        <span>{{contacts[activeContact].name}}</span>
+                    </div>
+                    <div class="chat-container">
+                        <div v-for="(mex,index) in contacts.messages" :key="index">
+                            {{mex.message}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
         <script src="./js/script.js"></script>
     </body>
-</html>
+    </html>
