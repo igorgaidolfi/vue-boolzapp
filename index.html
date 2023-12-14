@@ -43,7 +43,7 @@
                         <span>{{contacts[activeContact].name}}</span>
                     </div>
                     <div class="chat-container">
-                        <div v-for="(mex,index) in contacts.messages" :key="index">
+                        <div v-for="(mex,index) in contacts[activeContact].messages" :key="index">
                             {{mex.message}}
                         </div>
                     </div>
