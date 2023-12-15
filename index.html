@@ -30,14 +30,18 @@
                             <a href="" class="link-underline-secondary link-secondary fsize-m">Attiva notifiche desktop</a>
                         </div>
                     </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                    <div class="input-group p-2 bg-light">
+                        <span class="input-group-text bg-white px-4" id="basic-addon1"><i class="fa-solid fa-magnifying-glass text-body-tertiary"></i></span>
+                        <input type="text" class="form-control fsize-m" placeholder="Cerca o inizia una nuova chat">
                       </div>                      
                     <ul class="list-unstyled">
-                        <li v-for="(user,index) in contacts" :key= "index">
-                            <img :src="user.avatar" alt="user.name" class="avatar">
-                            <span class="fs-5">{{user.name}}</span>
+                        <li v-for="(user,index) in contacts" :key= "index" class="d-flex border-bottom border-secondary-subtle">
+                            <img :src="user.avatar" alt="user.name" class="avatar mx-3 my-2">
+                            <div class="ms-2">
+                                <p class="m-0 fs-5">{{user.name}}</p>
+                                <p class="m-0 fsize-m text-body-tertiary">Ultimo messaggio inviato</p>
+                            </div>
+                            
                         </li>
                     </ul>
                 </div>
