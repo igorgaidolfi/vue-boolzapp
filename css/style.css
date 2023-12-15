@@ -37,6 +37,16 @@ body{
     background-image: url(../img/mine.jpg);
     height: calc(100vh - 200px);
 }
+.message{
+    padding: 18px 100px 18px 15px;
+    position: relative;
+}
+.message-time{
+    position: absolute;
+    bottom: 1px;
+    right: 5px;
+    font-size: 10px;
+}
 .message-sent{
     background-color: #D5F9BA;
 
@@ -47,6 +57,9 @@ body{
 .chat-bar{
     height: 75px;
     background-color: #F3EEEA;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 .icon{
     font-size: x-large;

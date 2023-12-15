@@ -47,9 +47,12 @@
                 </div>
                 <div class="right">
                     <div class="header d-flex align-items-center justify-content-between px-2">
-                        <div>
+                        <div class="d-flex">
                             <img :src="contacts[activeContact].avatar" alt="{{contacts[activeContact].name}}" class="avatar">
-                            <span class="ms-3 fsize-l">{{contacts[activeContact].name}}</span>
+                            <div class="ms-2 ">
+                                <p class="m-0 ms-3 fsize-l lh-lg">{{contacts[activeContact].name}}</p>
+                                <p class="m-0 ms-3 fsize-m lh-1">Ultimo accesso oggi alle 12:00</p>
+                            </div>
                         </div>
                         <div>
                             <i class="fa-solid icon fa-magnifying-glass"></i>
@@ -57,22 +60,30 @@
                             <i class="fa-solid icon fa-ellipsis-vertical pe-3"></i>
                         </div>
                     </div>
-                    <div class="chat-container">
-                        <div v-for="(mex,index) in contacts[activeContact].messages" :key="index" :class="mex.status == 'sent' ? 'text-end' : ''"lh-sm>
-                            <span :class="mex.status == 'sent' ? 'message-sent' : 'message-received'">{{mex.message}}</span>
+                    <div class="chat-container pt-5 px-5">
+                        <div v-for="(mex,index) in contacts[activeContact].messages" :key="index" :class="mex.status == 'sent' ? 'text-end' : ''" class="px-5 py-4">
+                            <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit.  -->
+                            <span :class="mex.status == 'sent' ? 'message-sent' : 'message-received'" class="message rounded my-5">{{mex.message}}<span class="message-time">20:20</span></span>
                         </div>
                     </div>
-                    <div class="chat-bar d-flex">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-1 chat-bar"><i class="fa-regular icon fa-face-smile"></i></div>
+                            <div class="col-10 chat-bar"><input type="text" class="form-control fsize-m p-3" placeholder="Scrivi un messaggio"></div>
+                            <div class="col-1 chat-bar"><i class="fa-solid icon fa-microphone"></i></div>
+                        </div>
+                    </div>
+                    <!-- <div class="chat-bar d-flex align-items-center ">
                         <div>
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div>
-                            <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                            <input type="text" class="form-control col-12" placeholder="Scrivi un messaggio">
                         </div>
                         <div>
                             <i class="fa-solid icon fa-microphone"></i>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
