@@ -3,6 +3,7 @@ createApp({
     data(){
         return{
             activeContact: 0,
+            new_mex:'',
             contacts: [
                 {
                     name: 'Michele',
@@ -171,6 +172,22 @@ createApp({
     methods:{
         changeContact(index){
             this.activeContact = index
+        },
+        newMessage(activeContact){
+            let mex = {
+                message: this.new_mex,
+                status:'sent',
+            }
+            this.contacts[activeContact].messages.push(mex)
+            this.new_mex= ''
+            setTimeout(function(){
+                let ans = {
+                    message: 'Ok.',
+                    status:'received',
+                }
+                this.contacts[activeContact].messages.push(ans)
+            },1000)
         }
     }
+    
 }).mount('#app')

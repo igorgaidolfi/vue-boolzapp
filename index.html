@@ -68,7 +68,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-1 chat-bar"><i class="fa-regular icon fa-face-smile"></i></div>
-                            <div class="col-10 chat-bar"><input type="text" class="form-control fsize-m p-3" placeholder="Scrivi un messaggio"></div>
+                            <div class="col-10 chat-bar"><input type="text" class="form-control fsize-m p-3" placeholder="Scrivi un messaggio" v-model="new_mex" @keyup.enter="newMessage(activeContact)"></div>
                             <div class="col-1 chat-bar"><i class="fa-solid icon fa-microphone"></i></div>
                         </div>
                     </div>
