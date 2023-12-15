@@ -12,18 +12,22 @@
         <div id="app">
             <div class="container_ bg_white d-flex">
                 <div class="left">
-                    <div class="header">
-                        <img src="./img/avatar_io.jpg" alt="Sofia" class="avatar">
-                        <span>Sofia</span>
-                        <i class="fa-solid fa-circle-notch"></i>
-                        <i class="fa-solid fa-message"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                    </div>
-                    <div class="banner d-flex">
-                        <div><i class="fa-solid fa-bell-slash"></i></div>
+                    <div class="header d-flex align-items-center justify-content-between px-2 border-end border-secondary-subtle">
                         <div>
-                            <p>Ricevi notifiche di nuovi messaggi</p>
-                            <a href="">Attiva notifiche desktop</a href="">
+                            <img src="./img/avatar_io.jpg" alt="Sofia" class="avatar">
+                            <span class="align-middle">Sofia</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid icon fa-circle-notch"></i>
+                            <i class="fa-solid icon fa-message px-4"></i>
+                            <i class="fa-solid icon fa-ellipsis-vertical pe-3"></i>
+                        </div>
+                    </div>
+                    <div class="banner d-flex align-items-center px-3">
+                        <div class="white-circle"><i class="fa-solid bell_ fa-bell-slash"></i></div>
+                        <div class="ms-3">
+                            <p class="m-0 lh-1">Ricevi notifiche di nuovi messaggi</p>
+                            <a href="" class="link-underline-secondary link-secondary fsize-m">Attiva notifiche desktop</a>
                         </div>
                     </div>
                     <div class="input-group mb-3">
@@ -33,18 +37,36 @@
                     <ul class="list-unstyled">
                         <li v-for="(user,index) in contacts" :key= "index">
                             <img :src="user.avatar" alt="user.name" class="avatar">
-                            <span>{{user.name}}</span>
+                            <span class="fs-5">{{user.name}}</span>
                         </li>
                     </ul>
                 </div>
                 <div class="right">
-                    <div class="header">
-                        <img :src="contacts[activeContact].avatar" alt="{{contacts[activeContact].name}}" class="avatar">
-                        <span>{{contacts[activeContact].name}}</span>
+                    <div class="header d-flex align-items-center justify-content-between px-2">
+                        <div>
+                            <img :src="contacts[activeContact].avatar" alt="{{contacts[activeContact].name}}" class="avatar">
+                            <span class="ms-3 fsize-l">{{contacts[activeContact].name}}</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid icon fa-magnifying-glass"></i>
+                            <i class="fa-solid icon fa-paperclip px-4"></i>
+                            <i class="fa-solid icon fa-ellipsis-vertical pe-3"></i>
+                        </div>
                     </div>
                     <div class="chat-container">
-                        <div v-for="(mex,index) in contacts[activeContact].messages" :key="index">
-                            {{mex.message}}
+                        <div v-for="(mex,index) in contacts[activeContact].messages" :key="index" :class="mex.status == 'sent' ? 'text-end' : ''"lh-sm>
+                            <span :class="mex.status == 'sent' ? 'message-sent' : 'message-received'">{{mex.message}}</span>
+                        </div>
+                    </div>
+                    <div class="chat-bar d-flex">
+                        <div>
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                        </div>
+                        <div>
+                            <i class="fa-solid icon fa-microphone"></i>
                         </div>
                     </div>
                 </div>

@@ -12,17 +12,19 @@ body{
     margin: 25px auto;
 }
 .left{
-    width: 40%;
+    width: 35%;
 }
 .right{
-    width: 60%;
+    width: 65%;
 }
 .left .header,
 .right .header{
     background-color: #eaeaea;
+    height: 75px;
 }
 .banner{
     background-color: #8EDAFC;
+    height: 75px;
 }
 .bg_white{
     background-color: #fff;
@@ -33,10 +35,38 @@ body{
 }
 .chat-container{
     background-image: url(../img/mine.jpg);
+    height: calc(100vh - 200px);
 }
 .message-sent{
     background-color: #D5F9BA;
+
 }
 .message-received{
     background-color: #fff;
+}
+.chat-bar{
+    height: 75px;
+    background-color: #F3EEEA;
+}
+.icon{
+    font-size: x-large;
+}
+.fsize-l{
+    font-size: large;
+}
+.white-circle{
+    background: #fff;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.bell_{
+    font-size: 19px;
+    color: #8EDAFC
+}
+.fsize-m{
+    font-size: 14px;
 }
