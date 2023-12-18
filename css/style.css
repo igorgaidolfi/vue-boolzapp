@@ -84,3 +84,6 @@ body{
 .fsize-m{
     font-size: 14px;
 }
+.d_flex{
+    display: flex;
+}

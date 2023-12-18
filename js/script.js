@@ -4,6 +4,7 @@ createApp({
         return{
             activeContact: 0,
             new_mex:'',
+            contact:'',
             contacts: [
                 {
                     name: 'Michele',
@@ -194,6 +195,17 @@ createApp({
             let today = dt.now()
             date = `${today.day}/${today.month}/${today.year} ${today.hour}:${today.minute}:${today.second}`
             return date
+        },
+        searchContact(){
+            this.contacts.forEach((elem) => {
+                if(elem.name.toLowerCase().includes(this.contact.toLowerCase())){
+                    console.log(elem.name)
+                    elem.visible = true
+                }
+                else{
+                    elem.visible = false
+                }
+            })
         }
     }
     

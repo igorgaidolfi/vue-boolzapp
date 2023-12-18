@@ -10,9 +10,9 @@
     </head>
     <body>
         <div id="app">
-            <div class="container_ bg_white d-flex">
+            <div class="container_ bg_white d_flex">
                 <div class="left">
-                    <div class="header d-flex align-items-center justify-content-between px-2 border-end border-secondary-subtle">
+                    <div class="header d_flex align-items-center justify-content-between px-2 border-end border-secondary-subtle">
                         <div>
                             <img src="./img/avatar_io.jpg" alt="Sofia" class="avatar">
                             <span class="align-middle">Sofia</span>
@@ -23,7 +23,7 @@
                             <i class="fa-solid icon fa-ellipsis-vertical pe-3"></i>
                         </div>
                     </div>
-                    <div class="banner d-flex align-items-center px-3">
+                    <div class="banner d_flex align-items-center px-3">
                         <div class="white-circle"><i class="fa-solid bell_ fa-bell-slash"></i></div>
                         <div class="ms-3">
                             <p class="m-0 lh-1">Ricevi notifiche di nuovi messaggi</p>
@@ -32,10 +32,10 @@
                     </div>
                     <div class="input-group p-2 bg-light">
                         <span class="input-group-text bg-white px-4" id="basic-addon1"><i class="fa-solid fa-magnifying-glass text-body-tertiary"></i></span>
-                        <input type="text" class="form-control fsize-m" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" class="form-control fsize-m" placeholder="Cerca o inizia una nuova chat" v-model="contact" @keyup="searchContact">
                       </div>                      
                     <ul class="list-unstyled">
-                        <li v-for="(user,index) in contacts" :key= "index" class="d-flex border-bottom border-secondary-subtle" @click="changeContact(index)">
+                        <li v-show="user.visible ? 'visible' : ''" v-for="(user,index) in contacts" :key= "index" class="d_flex border-bottom border-secondary-subtle" @click="changeContact(index)">
                             <img :src="user.avatar" alt="user.name" class="avatar mx-3 my-2">
                             <div class="ms-2">
                                 <p class="m-0 fs-5">{{user.name}}</p>
@@ -45,8 +45,8 @@
                     </ul>
                 </div>
                 <div class="right">
-                    <div class="header d-flex align-items-center justify-content-between px-2">
-                        <div class="d-flex">
+                    <div class="header d_flex align-items-center justify-content-between px-2">
+                        <div class="d_flex">
                             <img :src="contacts[activeContact].avatar" alt="{{contacts[activeContact].name}}" class="avatar">
                             <div class="ms-2 ">
                                 <p class="m-0 ms-3 fsize-l lh-lg">{{contacts[activeContact].name}}</p>
