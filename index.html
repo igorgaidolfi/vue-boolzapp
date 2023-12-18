@@ -62,7 +62,7 @@
                     <div class="chat-container pt-5 px-5">
                         <div v-for="(mex,index) in contacts[activeContact].messages" :key="index" :class="mex.status == 'sent' ? 'text-end' : ''" class="px-5 py-4">
                             <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit.  -->
-                            <span :class="mex.status == 'sent' ? 'message-sent' : 'message-received'" class="message rounded my-5">{{mex.message}}<span class="message-time">20:20</span></span>
+                            <span :class="mex.status == 'sent' ? 'message-sent' : 'message-received'" class="message rounded my-5">{{mex.message}}<span class="message-time">{{mex.date}}</span></span>
                         </div>
                     </div>
                     <div class="container">
@@ -76,6 +76,7 @@
             </div>
             
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
         <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
         <script src="./js/script.js"></script>
     </body>

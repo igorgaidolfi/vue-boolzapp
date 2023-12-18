@@ -180,13 +180,20 @@ createApp({
             }
             this.contacts[activeContact].messages.push(mex)
             this.new_mex= ''
-            setTimeout(function(){
+            setTimeout(() => {
                 let ans = {
                     message: 'Ok.',
                     status:'received',
+                    date: this.dateLuxon(),
                 }
                 this.contacts[activeContact].messages.push(ans)
             },1000)
+        },
+        dateLuxon(){
+            const dt =  luxon.DateTime
+            let today = dt.now()
+            date = `${today.day}/${today.month}/${today.year} ${today.hour}:${today.minute}:${today.second}`
+            return date
         }
     }
     
