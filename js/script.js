@@ -209,7 +209,8 @@ createApp({
             })
         },
         lastAccess(activeContact){
-            this.last_mex = this.contacts[activeContact].messages[messages.length - 1].date 
+            messagePosition = this.contacts[activeContact].messages.length - 1
+            return this.contacts[activeContact].messages[messagePosition].date 
         }
     }
     
