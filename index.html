@@ -39,7 +39,7 @@
                             <img :src="user.avatar" alt="user.name" class="avatar mx-3 my-2">
                             <div class="ms-2">
                                 <p class="m-0 fs-5">{{user.name}}</p>
-                                <p class="m-0 fsize-m text-body-tertiary">Ultimo messaggio inviato</p>
+                                <p class="m-0 fsize-m text-body-tertiary">Ultimo messaggio inviato {{lastAccess(index)}}</p>
                             </div>
                         </li>
                     </ul>
