@@ -50,7 +50,7 @@
                             <img :src="contacts[activeContact].avatar" alt="{{contacts[activeContact].name}}" class="avatar">
                             <div class="ms-2 ">
                                 <p class="m-0 ms-3 fsize-l lh-lg">{{contacts[activeContact].name}}</p>
-                                <p class="m-0 ms-3 fsize-m lh-1">Ultimo accesso oggi alle 12:00</p>
+                                <p class="m-0 ms-3 fsize-m lh-1">Ultimo accesso oggi alle {{contacts[activeContact].messages[last_mex].date }}</p>
                             </div>
                         </div>
                         <div>

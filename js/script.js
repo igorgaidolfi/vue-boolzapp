@@ -5,6 +5,7 @@ createApp({
             activeContact: 0,
             new_mex:'',
             contact:'',
+            last_mex: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -206,6 +207,9 @@ createApp({
                     elem.visible = false
                 }
             })
+        },
+        lastAccess(activeContact){
+            this.last_mex = this.contacts[activeContact].messages[messages.length - 1].date 
         }
     }
     
